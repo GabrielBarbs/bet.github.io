@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #101242;
+    height: 100vh;
+}
+
+section.ranking{
+    display: flex;
+    margin: 0 250px;
+}
+
+.img-podio{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    margin: 5% 5%;
+}
+.nomes-podio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.nomes-podio p{
+    margin: 10px 30px;
+}
+
+.fora-do-podio{
+    margin: 5% 5%;
+    color: #fff;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.fora-podio :not(:first-child){
+    margin-top: 55px;
+}
+section.usuario{
+    margin: 0 250px;
+    justify-content: center;
+align-items: center;
+}
+
+header{
+    background-color: #74D346;
+}
+
+header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+header a{
+    color: #00000075;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+header a:hover{
+    transform: scale(1.05);
+    color: black;
+}
+
+header nav ul{
+    list-style: none;
+}
+header .ini{
+margin-right: 190px;
+}
+header nav ul li{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0 20px;
+}
+
+header ul {
+display: inline-block;
+list-style: none;
+}
+
+header .cads button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: black;
+    color: #74D346;
+    cursor: pointer;
+    margin-left: 40px;
+    border: 0;
+    border-radius: 30px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+header .cads button:hover{
+transform: scale(1.05);
+}
+
+
+header .entrar{
+margin-left: 140px;
+}
+
+.footer {
+    background-color: #74D346;
+    padding: 26px;
+    text-align: center;
+}
+.footer a {
+    color: #00000075;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    display: inline-block;
+    transition: 0.5s;
+}
+.footer a:hover{
+    color: black;
+    scale: 110%;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+}
+.footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.fundo{
+    margin: 40px 4%;
+    background-color: rgb(4, 1, 37);
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.fundo2{
+    margin: 40px 4%;
+    background-color: rgb(4, 1, 37);
+    width: 50%;
+    border-radius: 20px;
+}
+.fundo3{
+    margin: 40px 4%;
+    height: 100px;
+    background-color: rgb(4, 1, 37);
+   border-radius: 5px;
+   color: #fff;
+   font-weight: 700;
+   font-family: sans-serif;
+}

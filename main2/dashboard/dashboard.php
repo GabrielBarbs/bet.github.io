@@ -6,7 +6,7 @@
         unset($_SESSION['senha']);  
         unset($_SESSION['classe']);
         unset($_SESSION['saldo']);
-        header('Location: loginregister_paste/login.php');
+        header('Location: ../login/login.php');
         exit();
     }else{
         $usuario_atual = $_SESSION['usuario'];
@@ -14,11 +14,11 @@
         $classe_atual = $_SESSION['classe'];
 
         if($classe_atual != "admin"){
-            header('Location: ../index.php');
+            header('Location: ../../index.php');
             exit();
         }else{
 
-            $db = new PDO('sqlite:usuarios.db');
+            $db = new PDO('sqlite:../usuarios.db');
 
             if(!empty($_GET['search'])){
                 $data = $_GET['search'];

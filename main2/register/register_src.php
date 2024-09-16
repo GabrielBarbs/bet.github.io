@@ -1,11 +1,10 @@
 <?php
-$db = new PDO('sqlite:usuarios.db');
+$db = new PDO('sqlite:../usuarios.db');
 
 if (!isset($_POST['submit'])) {
     $usuario = $_POST['usuario'];
-    $senha = $_POST['senha']; // Hashing da senha para segurança
+    $senha = $_POST['senha'];
 
-    # Função para verificar se o usuário existe
     function checa_usuario_existe($db, $usuario) {
         $stmt = $db->prepare('SELECT * FROM usuarios WHERE username = :usuario');
         $stmt->bindParam(':usuario', $usuario);
@@ -14,17 +13,29 @@ if (!isset($_POST['submit'])) {
     }
 
     if (checa_usuario_existe($db, $usuario)) {
-        echo "Usuário já existe!";
-        ## usuario existe!!
+        unset($_SESSION['usuario']);
+        unset($_SESSION['senha']);   
+        unset($_SESSION['classe']); 
+        unset($_SESSION['saldo']);
+        echo "
+        <script>
+            var search = 'false';
+
+            function searchdata(){
+                window.location = 'registerpage.php?existe='+search.value;
+            }
+        </script>
+        ";
+
+        echo"<script> searchdata(); </script>";
     } else {
-        // Inserindo o novo usuário com prepared statements para evitar injeção SQL
         $stmt = $db->prepare("INSERT INTO usuarios (username, password, saldo, classe) VALUES (:usuario, :senha, 100.0, 'n')");
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':senha', $senha);
         if ($stmt->execute()) {
-            header('Location: login.php');
+            header('Location: ../login/login.php');
         } else {
-            echo "Erro ao cadastrar usuário.";
+            header('Location ../../error_404.html');
         }
     }
 }

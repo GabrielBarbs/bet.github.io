@@ -1,5 +1,7 @@
 <?php
-    $db = new PDO('sqlite:usuarios.db');
+    $db = new PDO('sqlite:../usuarios.db');
+
+    $msg_eroo = false;
 
     if(isset($_POST['submit'])){
         $usuario = $_POST['username'];
@@ -15,16 +17,26 @@
             $_SESSION['senha'] = $senha;
             $_SESSION['classe'] = $user['classe'];
             $_SESSION['saldo'] = $user['saldo'];
-            header('Location: ../index.php'); // Redireciona para uma página restrita
+            header('Location: ../../index.php'); // Redireciona para uma página restrita
         } else {
-            // Login inválido
+            echo "
+            <script>
+                var search = 'false';
+
+                function searchdata(){
+                    window.location = 'login.php?condition='+search.value;
+                }
+            </script>
+            ";
+
+            echo"<script> searchdata(); </script>";
             unset($_SESSION['usuario']);
             unset($_SESSION['senha']);   
             unset($_SESSION['classe']); 
             unset($_SESSION['saldo']);
-            echo "Usuário ou senha inválidos.";
         }
 }else{
-    echo "errorororor";
+    header('Location: ../../error_404.html');
 }
 ?>
+

@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO('sqlite:usuarios.db');
+$db = new PDO('sqlite:../usuarios.db');
 
 if(isset($_POST['submit'])){
     $id = $_POST['id'];

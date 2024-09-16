@@ -6,7 +6,7 @@
         unset($_SESSION['senha']);  
         unset($_SESSION['classe']);
         unset($_SESSION['saldo']);
-        header('Location: loginregister_paste/login.php');
+        header('Location: main2/login.php');
         exit();
     }else{
         $usuario_atual = $_SESSION['usuario'];
@@ -98,7 +98,7 @@
         <p style="margin-bottom: 5px;">2024 Gabriel Marques, Gabriel Barbosa e Gustavo Cestari. Todos os direitos reservados</p>
     </div>
 
-    <a style="margin: 5px auto;" href="main2/dashboard.php">DashBoard</a>
+    <a style="margin: 5px auto;" href="main2/dashboard/dashboard.php">DashBoard</a>
 </footer>
 
 </body>

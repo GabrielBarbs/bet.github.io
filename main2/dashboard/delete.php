@@ -1,6 +1,6 @@
 <?php
     if(!empty($_GET['id'])){
-        $db = new PDO('sqlite:usuarios.db');
+        $db = new PDO('sqlite:../usuarios.db');
 
         $id = $_GET['id'];
 

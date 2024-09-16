@@ -49,8 +49,35 @@ button {
                 <input type="password" name="senha" id="senha" required>
                 <br>
                 <button type="submit">Register</button>
+
+                <?php
+                
+                    $parametros_get = $_GET;
+
+                    // Verifica se o array de parâmetros está vazio
+                    if (!empty($parametros_get)) {
+
+                        $usuario_errado = $_GET['existe'];
+
+                        if($usuario_errado == "undefined"){
+                            echo "<p id='paragraph-to-hide' style='color: white'>Usuario ja existe!</p>";
+                        }
+                    }
+                
+
+                ## checa se esta errado e da a mensagem
+                ?>
             </form>
         </div>
     </div>
+
+    <script>
+        function hideParagraph() {
+            const paragraph = document.getElementById('paragraph-to-hide');
+            paragraph.style.display = 'none';
+        }
+
+        setTimeout(hideParagraph, 3000); // define o tempo que o paragrafo do "usuario ou senha invalido" fica aparecendo
+    </script>
 </body>
 </html>

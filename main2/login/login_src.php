@@ -17,6 +17,7 @@
             $_SESSION['senha'] = $senha;
             $_SESSION['classe'] = $user['classe'];
             $_SESSION['saldo'] = $user['saldo'];
+            $_SESSION['nome'] = $user['nome'];
             header('Location: ../../index.php'); // Redireciona para uma página restrita
         } else {
             echo "
@@ -34,6 +35,7 @@
             unset($_SESSION['senha']);   
             unset($_SESSION['classe']); 
             unset($_SESSION['saldo']);
+            unset($_SESSION['nome']);
         }
 }else{
     header('Location: ../../error_404.html');

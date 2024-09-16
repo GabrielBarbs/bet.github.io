@@ -166,7 +166,20 @@ text-align: center;
     vertical-align: middle;
 }
 
+.dropdown-menu{
+    position: absolute;
+    box-shadow: 0 0 2px black;
+    display: none;
+}
 
+.dropdown-menu a{
+    display: block;
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
 /* modals */
 
 /* modals */

@@ -4,6 +4,7 @@ $db = new PDO('sqlite:../usuarios.db');
 if (!isset($_POST['submit'])) {
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
+    $nome = $_POST['nome'];
 
     function checa_usuario_existe($db, $usuario) {
         $stmt = $db->prepare('SELECT * FROM usuarios WHERE username = :usuario');
@@ -17,6 +18,7 @@ if (!isset($_POST['submit'])) {
         unset($_SESSION['senha']);   
         unset($_SESSION['classe']); 
         unset($_SESSION['saldo']);
+        unset($_SESSION['nome']);
         echo "
         <script>
             var search = 'false';
@@ -29,9 +31,10 @@ if (!isset($_POST['submit'])) {
 
         echo"<script> searchdata(); </script>";
     } else {
-        $stmt = $db->prepare("INSERT INTO usuarios (username, password, saldo, classe) VALUES (:usuario, :senha, 100.0, 'n')");
+        $stmt = $db->prepare("INSERT INTO usuarios (username, password, real_name, saldo, classe) VALUES (:usuario, :senha, :nome,100.0, 'n')");
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':senha', $senha);
+        $stmt->bindParam(':nome', $nome);
         if ($stmt->execute()) {
             header('Location: ../login/login.php');
         } else {

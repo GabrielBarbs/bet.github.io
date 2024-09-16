@@ -6,14 +6,21 @@
         unset($_SESSION['senha']);  
         unset($_SESSION['classe']);
         unset($_SESSION['saldo']);
+        unset($_SESSION['nome']);
         header('Location: ../login/login.php');
         exit();
     }else{
         $usuario_atual = $_SESSION['usuario'];
         $saldo_atual = $_SESSION['saldo'];
         $classe_atual = $_SESSION['classe'];
+        $nome = $_SESSION['nome'];
 
         if($classe_atual != "admin"){
+            unset($_SESSION['usuario']);
+            unset($_SESSION['senha']);  
+            unset($_SESSION['classe']);
+            unset($_SESSION['saldo']);
+            unset($_SESSION['nome']);
             header('Location: ../../index.php');
             exit();
         }else{
@@ -57,6 +64,10 @@
             justify-content: center;
             gap: .1%;
         }
+        .container-fluid a{
+            color:white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +75,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <p>DashBoard BetIFSP</p>
+        <a href="dashboard.php">Inicio</a>
+        <a href="dias/dash_dia.php">Dias</a>
+        <a href=""></a>
         <p id="time"></p>
     </div>
     <div class="d-flex">
@@ -84,7 +98,7 @@
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
             </svg>
             </button>
-        </div>
+</div>
 
 
 <script>
@@ -106,6 +120,7 @@
         <th scope="col">#</th>
         <th scope="col">Usuario</th>
         <th scope="col">Senha</th>
+        <th scope="col">Nome Real</th>
         <th scope="col">Saldo</th>
         <th scope="col">...</th>
         </tr>
@@ -117,6 +132,7 @@
                 echo "<td>".$userdata['ID']."</td>";
                 echo "<td>".$userdata['username']."</td>";
                 echo "<td>".$userdata['password']."</td>";
+                echo "<td>".$userdata['real_name']."</td>";
                 echo "<td>".$userdata['saldo']."</td>";
                 echo "<td>
                 <a class='btn btn-sm btn-primary' href='edit.php?id=$userdata[ID]'>

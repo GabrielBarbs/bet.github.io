@@ -21,7 +21,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main/bet.css">
-    <title>Document</title>
+    <title>BET Ifsp</title>
 </head>
 <body>
     
@@ -29,7 +29,7 @@
 <header>
 <div class="interface">
    <div class="logo">
-    <a href="#"><img src="image.png" alt="" height="70px" width="95px"></a>
+    <a href="#"><img src="img/image.png" alt="" height="70px" width="95px"></a>
    </div>
    <div class="ini">
     <ul>
@@ -92,11 +92,13 @@
         <a href="tel:+5511999999999"><i class="bi bi-phone-fill"></i></a>
     </div>
     <div class="falacmg">
-        <a style="margin: 5px auto;" href="contato.html" target="_blank">Fala Comigo</a>
+        <a style="margin: 5px auto;" href="main/contato.php">Fala Comigo</a>
     </div>
     <div class="direitos">
         <p style="margin-bottom: 5px;">2024 Gabriel Marques, Gabriel Barbosa e Gustavo Cestari. Todos os direitos reservados</p>
     </div>
+
+    <a style="margin: 5px auto;" href="main2/dashboard.php">DashBoard</a>
 </footer>
 
 </body>
